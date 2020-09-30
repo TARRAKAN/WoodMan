@@ -1,8 +1,33 @@
-﻿#include <iostream>
+﻿#include <SFML/Graphics.hpp>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main(){
+	sf::VideoMode vidMode(1920, 1080);
+	sf::RenderWindow gameWindow(vidMode,"WoodMan",sf::Style::Fullscreen);
+	sf::Texture tBackground;
+	tBackground.loadFromFile("grphcs/background.png");
+	sf::Sprite sBackground;
+	sBackground.setTexture(tBackground);
+	sBackground.setPosition(0, 0);
+
+	while (gameWindow.isOpen()) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+			gameWindow.close();
+		}
+			//
+			//
+			//
+			//
+			gameWindow.clear();
+			//
+			//
+			//
+			gameWindow.draw(sBackground);
+			//
+			//
+			// 
+			gameWindow.display();
+	}
+	return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
